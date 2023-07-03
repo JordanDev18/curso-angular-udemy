@@ -1,0 +1,13 @@
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+    <a class="navbar-brand" style="color: darkgreen; font-size: 30px; font-style: initial;" *ngFor="let menu of _sideBar.menuu" >{{menu.titulo}}</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav" >
+        <li class="nav-item active" *ngFor="let subMenu of _navBar.menu" >
+          <a class="nav-link" style="color: black; text-decoration: solid; cursor: pointer; font-size: 22px;" routerLinkActive="active" [routerLink]="subMenu.url">{{subMenu.titulo}}</a>
+        </li>
+      </ul>
+    </div>
+  </nav>

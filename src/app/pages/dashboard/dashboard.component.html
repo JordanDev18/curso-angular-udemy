@@ -1,0 +1,157 @@
+
+
+
+
+
+
+<!-- FORMULARIO NORMAL -->
+<!-- <h3>Formulario básico con ngModel</h3>
+<div class="container">
+     <div class="row">
+          <div class="col-12">
+               <form name="form" id="form" (submit)="enviar()" [formGroup]="formulario">
+                    <div class="form-group">
+                         <label for="nombre">Nombre:</label>
+                         <input type="text" name="nombre" class="form-control">
+                    </div>
+                    <div class="form-group">
+                         <label for="correo">Correo:</label>
+                         <input type="text" name="correo" class="form-control">
+                    </div>
+                    <div class="form-group">
+                         <label for="telefono">Teléfono:</label>
+                         <input type="text" name="telefono" class="form-control">
+                    </div>
+                    <div class="form-group">
+                         <label for="pais">Países</label>
+                         <select name="pais" class="form-control">
+                              <option *ngFor="let pais of paises" [value]="pais.nombre">{{ pais.nombre }}</option>
+                         </select>
+                    </div>
+                    <hr>
+                    <input type="submit" value="Enviar" class="btn btn-success" [disabled]="formulario.valid">
+               </form>
+               <div class="form-check">
+                    <input class="form-check-input" type="checkbox" (change)="checkbox($event)" [(ngModel)]="seleccioneCheckbox" id="flexCheckChecked" checked>
+                    <label class="form-check-label" for="flexCheckChecked">
+                      Acepta los términos y condiciones
+                    </label>
+               </div>
+          </div>
+     </div>
+</div>
+<hr>
+
+<div class="container">
+     <div class="row">
+          <div class="col-12">
+               <h4>Usuarios registrados</h4>
+               <table class="table table-bordered">
+                    <thead>
+                         <tr>
+                              <th>Nombre</th>
+                              <th>Correo</th>
+                              <th>Teléfono</th>
+                              <th>País</th>
+                         </tr>
+                    </thead>
+
+                    <tbody>
+                         <tr *ngFor="let user of users">
+                              <td>{{ user.nombre }}</td>
+                              <td>{{ user.correo }}</td>
+                              <td>{{ user.telefono }}</td>
+                              <td>{{ user.pais }}</td>
+                         </tr>
+                    </tbody>
+               </table>
+          </div>
+     </div>
+</div> -->
+
+<h3>Formulario reactive form con ngModel</h3>
+<div class="container">
+     <div class="row">
+          <div class="col-12">
+               <form [formGroup]="formulario" #formulaio="ngForm">
+                    <div class="cross-validation" [class.cross-validation-error]="formulario.errors?.['ValidaSelect'] && formulaio.invalid && (formulaio.touched || formulaio.dirty)">
+                         <div class="form-group">
+                              <label for="nombre">Nombre:</label>
+                              <input formControlName="nombre" type="text" class="form-control" required>
+                              <div *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)" class="alert alert-danger">
+                                   <div *ngIf="nombre.errors?.['required']">
+                                        El campo nombre es obligatorio
+                                   </div>
+                                   <div *ngIf="nombre.errors?.['minLength']">
+                                        Minimo de campos 4.
+                                   </div>
+                              </div>
+                         </div>
+                         <div class="form-group">
+                              <label for="correo">Correo:</label>
+                              <input formControlName="correo" type="text" class="form-control" required>
+                              <div *ngIf="correo.invalid && (nombre.dirty || correo.touched)" class="alert alert-danger">
+                                   <div *ngIf="correo.errors?.['required']">
+                                        El campo correo es obligatorio
+                                   </div>
+                                   <div *ngIf="correo.errors?.['minLength']">
+                                        Minimo de campos 4.
+                                   </div>
+                              </div>
+                         </div>
+                         <div class="form-group">
+                              <label for="telefono">Teléfono:</label>
+                              <input formControlName="telefono" type="text" class="form-control" required>
+                              <div *ngIf="telefono.invalid && (telefono.dirty || telefono.touched)" class="alert alert-danger">
+                                   <div *ngIf="telefono.errors?.['required']">
+                                        El campo telefono es obligatorio
+                                   </div>
+                                   <div *ngIf="telefono.errors?.['minLength']">
+                                        Minimo de campos 10.
+                                   </div>
+                              </div>
+                         </div>
+                         <div class="form-group">
+                              <label for="pais">Países</label>
+                              <select formControlName="pais" class="form-control">
+                                   <option *ngFor="let pais of paises" [value]="pais.nombre">{{ pais.nombre }}</option>
+                                   <div *ngIf="formulario.invalid && (formulario.touched || formulario.dirty)" class="alert alert-danger">
+                                        País obligatorio
+                                      </div>
+                              </select>
+                         </div>
+                    </div>
+                    <hr>
+                    <input type="submit" value="Enviar" class="btn btn-success" (click)="enviarReactive()" [disabled]="formulario.invalid">
+               </form>
+          </div>
+     </div>
+</div>
+<hr>
+
+<div class="container">
+     <div class="row">
+          <div class="col-12">
+               <h4>Usuarios registrados con reactive form</h4>
+               <table class="table table-bordered">
+                    <thead>
+                         <tr>
+                              <th>Nombre</th>
+                              <th>Correo</th>
+                              <th>Teléfono</th>
+                              <th>País</th>
+                         </tr>
+                    </thead>
+
+                    <tbody>
+                         <tr *ngFor="let user of users">
+                              <td>{{ user.nombre }}</td>
+                              <td>{{ user.correo }}</td>
+                              <td>{{ user.telefono }}</td>
+                              <td>{{ user.pais }}</td>
+                         </tr>
+                    </tbody>
+               </table>
+          </div>
+     </div>
+</div>
