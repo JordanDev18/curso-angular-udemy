@@ -1,0 +1,24 @@
+
+
+<div class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Editar: {{datos.nombre}}</h4>
+        <button type="button" class="close" aria-label="Close" (click)="closeModal()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form (ngSubmit)="submitForm()">
+          <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="{{datos.nombre}}" [(ngModel)]="nombre" required>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="closeModal() ">Cerrar</button>
+        <button type="button" class="btn btn-primary" (click)="submitForm()">Enviar</button>
+      </div>
+    </div>
+  </div>

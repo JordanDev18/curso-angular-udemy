@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MaterialCardComponent } from './material-card/material-card.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedUdemyModule } from '../shared/sharedudemy.module';
 import { MaterialDialogComponent } from './material-dialog/material-dialog.component';
 import { MaterialInputComponent } from './material-input/material-input.component';
@@ -15,6 +15,10 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import { MaterialButtonComponent } from './material-button/material-button.component';
+import { ApirestComponent } from './apirest/apirest.component';
+import { CateroriasComponent } from './apirest/caterorias/caterorias.component';
+import { EditarComponent } from './apirest/categorias/editar/editar.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
     declarations: [
@@ -24,7 +28,10 @@ import { MaterialButtonComponent } from './material-button/material-button.compo
         MaterialInputComponent,
         MaterialPanelExpansivoComponent,
         MaterialTabsComponent,
-        MaterialButtonComponent
+        MaterialButtonComponent,
+        ApirestComponent,
+        CateroriasComponent,
+        EditarComponent
     ],
     exports: [
         PagesudemyComponent,
@@ -37,12 +44,14 @@ import { MaterialButtonComponent } from './material-button/material-button.compo
     imports: [
         SharedUdemyModule,
         CommonModule,
+        FormsModule,
         ReactiveFormsModule,
         PAGES_ROUTES,
         SharedModule,
         BrowserAnimationsModule,
         MatButtonModule,
-        MatIconModule
+        MatIconModule,
+        HttpClientModule
     ]
 })
 export class PagesCursoUdemyModule { }

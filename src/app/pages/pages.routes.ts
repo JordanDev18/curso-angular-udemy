@@ -12,6 +12,9 @@ import { MaterialInputComponent } from '../cursoUdemy/pages/material-input/mater
 import { MaterialPanelExpansivoComponent } from '../cursoUdemy/pages/material-panel-expansivo/material-panel-expansivo.component';
 import { MaterialTabsComponent } from '../cursoUdemy/pages/material-tabs/material-tabs.component';
 import { PagesudemyComponent } from '../cursoUdemy/pages/pagesudemy.component';
+import { ApirestComponent } from '../cursoUdemy/pages/apirest/apirest.component';
+import { CateroriasComponent } from '../cursoUdemy/pages/apirest/caterorias/caterorias.component';
+import { EditarComponent } from '../cursoUdemy/pages/apirest/categorias/editar/editar.component';
 
 const pagesRoutes: Routes = [
     {
@@ -34,6 +37,15 @@ const pagesRoutes: Routes = [
                     { path: 'material-input', component: MaterialInputComponent, data: { titulo: 'Material Input' } },
                     { path: 'material-panel-expansivo', component: MaterialPanelExpansivoComponent, data: { titulo: 'Material Panel Expansivo' } },
                     { path: 'material-tabs', component: MaterialTabsComponent, data: { titulo: 'Material Tabs' } }
+                ]
+            },
+            {
+                path: 'categorias',
+                component: ApirestComponent,
+                data: {titulo: 'Categorias'},
+                children:[
+                    {path: 'list-categorias', component: CateroriasComponent, data:{titulo: 'List Categorias'}},
+                    {path: 'edit-categorias/:id', component: EditarComponent, data: {titulo: 'Editar categorias'}}
                 ]
             },
             { path: '', redirectTo: '/dashboard', pathMatch: 'full' }

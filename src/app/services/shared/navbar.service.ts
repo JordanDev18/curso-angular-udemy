@@ -4,8 +4,8 @@ import { Injectable } from '@angular/core';
 export class NavbarService {
   menu: any = [
     {
-      titulo: 'Material card',
-      url: '/material/material-card'
+      titulo: 'Categorias',
+      url: '/categorias/list-categorias'
     },
     {
       titulo: 'Material dialog',

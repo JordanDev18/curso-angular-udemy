@@ -21,7 +21,8 @@ export class SidebarService {
       icono: 'mdi mdi-gauge',
       subMenu:[
        { titulo: 'DashBoard', url: '/dashboard'},
-       {titulo: 'Materials', url:'/material'}
+       {titulo: 'API', url:'/categorias'},
+       {titulo: 'Material', url:'/material'}
        
 
 
@@ -31,16 +32,7 @@ export class SidebarService {
 
   menuu: any =[
     {
-     titulo: 'material',
-      subMenu2:[
-       //{ titulo: 'Material botton', url: '/material-botones'},
-       { titulo: 'Material card', url: '/material-card'},
-       { titulo: 'Material dialog', url: '/material-dialog'},
-       { titulo: 'Material input', url: '/material-input'},
-       { titulo: 'Material expansivo', url: '/material-panel-expansivo'},
-       { titulo: 'Material tabs', url: '/material-tabs"'}
-       
-      ]
+     titulo: 'material'
     }
   ]
 

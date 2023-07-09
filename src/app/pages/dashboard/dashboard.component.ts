@@ -86,7 +86,7 @@ export class DashboardComponent implements OnInit {
     let dato = (this.formulario.value.nombre+'   |  '+this.formulario.value.correo+'   |  '+this.formulario.value.telefono+'   |  '+this.formulario.value.pais)
     //alert(this.formulario.value.nombre+'   |  '+this.formulario.value.correo+'   |  '+this.formulario.value.telefono+'   |  '+this.formulario.value.pais)
     Swal.fire({
-      position: 'top-end',
+      position: 'center',
       icon: 'success',
       title: dato + '  ' + 'Guardado con exito ',
       showConfirmButton: false,

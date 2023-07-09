@@ -20,6 +20,7 @@ import { CommonModule, DOCUMENT } from '@angular/common';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './login/register.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -31,6 +32,8 @@ import { RegisterComponent } from './login/register.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     APP_ROUTES,
     PagesModule,
     ServiceModule,
